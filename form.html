@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Health Insurance Reports </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+       <link rel="shortcut icon" href="assets/images/castle-logo-10250-4098-128x121.png" type="image/x-icon">
+    <!--===============================================================================================-->
+    <style>
+      /*//////////////////////////////////////////////////////////////////
+         [ RESTYLE TAG ]*/
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-family: Source Sans Pro, sans-serif;
+      }
+
+      /*---------------------------------------------*/
+      a {
+        font-family: Source Sans Pro, sans-serif;
+        line-height: 1.7;
+        color: #666666;
+        margin: 0px;
+        transition: all 0.4s;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+      }
+
+      a:focus {
+        outline: none !important;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      /*---------------------------------------------*/
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0px;
+      }
+
+      p {
+        font-family: Source Sans Pro, sans-serif;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #666666;
+        margin: 0px;
+      }
+
+      ul,
+      li {
+        margin: 0px;
+        list-style-type: none;
+      }
+
+      /*---------------------------------------------*/
+      input {
+        outline: none;
+        border: none;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      textarea {
+        outline: none;
+        border: none;
+      }
+
+      textarea:focus,
+      input:focus {
+        border-color: transparent !important;
+      }
+
+      input:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+
+      input:focus:-moz-placeholder {
+        color: transparent;
+      }
+
+      input:focus::-moz-placeholder {
+        color: transparent;
+      }
+
+      input:focus:-ms-input-placeholder {
+        color: transparent;
+      }
+
+      textarea:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+
+      textarea:focus:-moz-placeholder {
+        color: transparent;
+      }
+
+      textarea:focus::-moz-placeholder {
+        color: transparent;
+      }
+
+      textarea:focus:-ms-input-placeholder {
+        color: transparent;
+      }
+
+      input::-webkit-input-placeholder {
+        color: #999999;
+      }
+
+      input:-moz-placeholder {
+        color: #999999;
+      }
+
+      input::-moz-placeholder {
+        color: #999999;
+      }
+
+      input:-ms-input-placeholder {
+        color: #999999;
+      }
+
+      textarea::-webkit-input-placeholder {
+        color: #999999;
+      }
+
+      textarea:-moz-placeholder {
+        color: #999999;
+      }
+
+      textarea::-moz-placeholder {
+        color: #999999;
+      }
+
+      textarea:-ms-input-placeholder {
+        color: #999999;
+      }
+
+      /*---------------------------------------------*/
+      button {
+        outline: none !important;
+        border: none;
+        background: transparent;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      iframe {
+        border: none !important;
+      }
+
+      /*//////////////////////////////////////////////////////////////////
+         [ Contact ]*/
+      .container-contact100 {
+        width: 100%;
+        min-height: 100vh;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        background: rgb(64,93,108);
+		background: -moz-radial-gradient(circle, rgba(64,93,108,1) 0%, rgba(163,200,223,1) 100%);
+		background: -webkit-radial-gradient(circle, rgba(64,93,108,1) 0%, rgba(163,200,223,1) 100%);
+		background: radial-gradient(circle, rgb(107 108 64) 0%, rgb(163 223 217) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#405d6c",endColorstr="#a3c8df",GradientType=1);
+		
+        position: relative;
+        z-index: 1;
+      }
+
+      .wrap-contact100 {
+        width: 670px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /*==================================================================
+         [ Title form ]*/
+      .contact100-form-title {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background: #ffffff26;
+        padding: 34px 15px 24px 15px;
+      }
+
+      .contact100-form-title-1 {
+        font-family: Source Sans Pro, sans-serif;
+        font-size: 20px;
+        color: #fff;
+        line-height: 1.2;
+        text-align: center;
+        padding-bottom: 7px;
+      }
+
+      .contact100-form-title-2 {
+        font-family: Source Sans Pro, sans-serif;
+        font-size: 17px;
+        color: #fff;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      /*==================================================================
+         [ Form ]*/
+      .contact100-form {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 43px 88px 57px 80px;
+        background: #fcfcfc;
+      }
+
+      /*------------------------------------------------------------------
+         [ Input ]*/
+      .wrap-input100 {
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid #b2b2b2;
+        margin-bottom: 26px;
+      }
+
+      .label-input100 {
+        font-family: arial;
+        font-size: 15px;
+        color: #808080;
+        line-height: 1.2;
+        text-align: right;
+        position: absolute;
+        top: 14px;
+        left: -105px;
+        width: 80px;
+      }
+
+      /*---------------------------------------------*/
+      .input100 {
+        font-family: arial;
+        font-size: 15px;
+        color: #555555;
+        line-height: 1.2;
+        display: block;
+        width: 100%;
+        background: transparent;
+        padding: 0 5px;
+      }
+
+      .focus-input100 {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .focus-input100::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        -webkit-transition: all 0.6s;
+        -o-transition: all 0.6s;
+        -moz-transition: all 0.6s;
+        transition: all 0.6s;
+        background: #57b846;
+      }
+
+      /*---------------------------------------------*/
+      input.input100 {
+        height: 45px;
+      }
+
+      textarea.input100 {
+        min-height: 115px;
+        padding-top: 14px;
+        padding-bottom: 13px;
+      }
+
+      .input100:focus+.focus-input100::before {
+        width: 100%;
+      }
+
+      .has-val.input100+.focus-input100::before {
+        width: 100%;
+      }
+
+      /*------------------------------------------------------------------
+         [ Button ]*/
+      .container-contact100-form-btn {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 8px;
+      }
+
+      .contact100-form-btn {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 160px;
+        height: 50px;
+        background-color: #004679;
+        border-radius: 0px;
+        font-family: arial;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #fff;
+        line-height: 1.2;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+
+      .contact100-form-btn i {
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+
+      .contact100-form-btn:hover {
+        background-color: #333333;
+      }
+
+      .contact100-form-btn:hover i {
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        -o-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+
+      /*------------------------------------------------------------------
+         [ Responsive ]*/
+      @media (max-width: 576px) {
+        .contact100-form {
+          padding: 43px 15px 57px 117px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact100-form {
+          padding: 43px 15px 57px 15px;
+        }
+
+        .label-input100 {
+          text-align: left;
+          position: unset;
+          top: unset;
+          left: unset;
+          width: 100%;
+          padding: 0 5px;
+        }
+      }
+
+      /*------------------------------------------------------------------
+         [ Alert validate ]*/
+      .validate-input {
+        position: relative;
+      }
+
+      .alert-validate::before {
+        content: attr(data-validate);
+        position: absolute;
+        max-width: 70%;
+        background-color: #fff;
+        border: 1px solid #c80000;
+        border-radius: 2px;
+        padding: 4px 25px 4px 10px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        right: 2px;
+        pointer-events: none;
+        font-family: Poppins-Medium;
+        color: #c80000;
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: left;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: opacity 0.4s;
+        -o-transition: opacity 0.4s;
+        -moz-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
+
+      .alert-validate::after {
+        content: "\f06a";
+        font-family: FontAwesome;
+        display: block;
+        position: absolute;
+        color: #c80000;
+        font-size: 15px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        right: 8px;
+      }
+
+      .alert-validate:hover:before {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      @media (max-width: 992px) {
+        .alert-validate::before {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-contact100">
+      <div class="wrap-contact100">
+        <div class="contact100-form-title">
+          <span class="contact100-form-title-1">
+            <h1>Health N Benefits Plans<br>WHEN STANDARD MEDICARE JUST ISN'T ENOUGH COVERAGE!</h1>
+          </span>
+          <span class="contact100-form-title-2">
+            <h2>Compare Quotes Today!</h2>
+          </span>
+        </div>   
+        <form method="post" class="contact100-form validate-form" action="thankyou.html">
+            <!-- /DW Connection -->
+            <script>
+              function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                  vars[key] = value;
+                });
+                document.getElementById("guid").value = JSON.stringify(vars.channel);
+              }
+              window.onload = getUrlVars;
+            </script>
+            <input type="hidden" id="guid" value="" />
+            <input type="hidden" name="vertical" value="6">
+            <input type="hidden" name="referer" value="https://healthinstantly.org/">
+            <!-- /DW Connection -->
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+              <input class="input100" type="text" placeholder="First Name" name="first_name" id="first_name" required>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+              <input class="input100" type="text" placeholder="Last Name" name="last_name" id="last_name" required>
+              <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Phone is required">
+              <input class="input100" type="text" placeholder="Phone Number" name="phone_home" id="phone_home" required>
+              <span class="focus-input100"></span>
+            </div>
+            <div style="font-size: 13px;color:black;line-height:18px;">
+              <input type="checkbox" required="required" id="tcpa_check"> &nbsp;&nbsp; I agree by providing a mobile telephone number and selecting “Yes”, “Confirm”, “Contact Me”, or a similar affirmation, you agree to our <a href="/terms.html" target="_blank" rel="noopener">Terms of Service</a> and  <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> (California Residents see<a href="/ccpa.html" target="_blank" rel="noopener"> CCPA.</a>You also confirm that you are the current owner/subscriber of the mobile telephone number provided or that the current owner/subscriber of this mobile telephone number authorized you to provide this number (collectively, “current owner”) to us, even if it is currently listed on any state, federal or corporate Do Not Call list. You understand that by providing this mobile telephone number, the current owner consents to be contacted by us, our vendors and our <a href="https://marketingpartners.business/" target="_blank" rel="noopener"> Marketing Partners </a>with marketing offers and services of any type at the mobile number provided, without limitation, restriction or reservation, notwithstanding the provisions contained in the  <a href="https://www.fcc.gov/sites/default/files/tcpa-rules.pdf" target="_blank" rel="noopener"> Telephone Consumer Protection Act (47 U.S. Code § 227)</a> and all amendments and interpretations of the same by any court of competent jurisdiction.  Although we try to limit offers from categories you have shown an interest, you hereby authorize us to contact you with offers based on information we continue to gather from you from all available sources irrespective of the subject matter. In this regard, you agree that we may contact you using auto dialer technology for the purpose of calling, sending text alerts, artificial voice and/or pre-recorded voice messages.  Text messages may be sent 24/7, but auto dialer calls will be made between the hours of 8 a.m. and 9 p.m. local time. The current owner understands that consent to receive these communications is not a condition of any purchase. Wireless and text message fees may apply wherever applicable.  You can opt out of these communications at any time by <a href="mailto:optout@marketingpartners.business"> emailing us</a>.  Any attempt by the current owner to claim that this consent should be unenforceable or is otherwise ambiguous shall be deemed made in bad faith because it can be cancelled at any time (although I understand that the indemnification provisions contained below shall survive cancellation). The current owner hereby indemnifies and holds us and our <a href="https://marketingpartners.business/" target="_blank" rel="noopener"> Marketing Partners </a>,  harmless from any and all liability that we and/or our  <a href="https://marketingpartners.business/" target="_blank" rel="noopener"> Marketing Partners </a>sustain as a result of our reliance upon your consent, including but not limited to attorney’s fees and costs for defending claims and/or controversies regarding the same, as all such parties shall be deemed third-party beneficiaries to the this consent agreement.<br>
+
+              <br>
+              <center>
+               <a href=“/thankyou.html“> <input class="contact100-form-btn" type="submit" id="submit" value="COMPARE QUOTES" style="text-align: center;margin-top:10px;"></a>
+              </center>
+            </div>
+          </form>
+          <br>
+          <br>
+          <center>
+            <div>
+              <a href="index.html" class="text-primary" style="color:#004679;font-size:13px;">Home</a> &#124; <a href="terms.html" target="_blank" class="text-primary" style="color:#004679;font-size:13px;">Terms of&nbsp; Service</a> &#124; <a href="privacy.html" target="_blank" class="text-primary" style="color: #004679;font-size:13px;">Privacy Policy</a> &#124; <a href="https://marketingpartners.business" target="_blank" class="text-primary" style="color: #004679;font-size:13px;">Marketing Partners</a>
+            </div>
+      <div id="dropDownSelect1"></div>
+
+      <!-- BEGIN LeadiD  FORM VERIFICATION -->
+      <script id="LeadiDscript" type="text/javascript">(function(){var s=document.createElement('script');s.id='LeadiDscript_campaign';s.type='text/javascript';s.async=true;s.src='//create.lidstatic.com/campaign/13ab4762-9477-31aa-0e66-beef21eda04d.js?snippet_version=2';var LeadiDscript=document.getElementById('LeadiDscript');LeadiDscript.parentNode.insertBefore(s,LeadiDscript);})();</script>
+      <noscript><img src='//create.leadid.com/noscript.gif?lac=a168bc8a-e425-b0bd-6fba-6e09100da171&lck=13ab4762-9477-31aa-0e66-beef21eda04d&snippet_version=2' data-pagespeed-url-hash="1574077843"/></noscript>
+      <!-- /BEGIN LeadiD  FORM VERIFICATION -->
+      <!-- BEGIN TRUSTED FORM VERIFICATION -->
+      <script type="text/javascript">(function(){var field='xxTrustedFormCertUrl';var provideReferrer=false;var tf=document.createElement('script');tf.type='text/javascript';tf.async=true;tf.src='http'+('https:'==document.location.protocol?'s':'')+'://api.trustedform.com/trustedform.js?provide_referrer='+escape(provideReferrer)+'&field='+escape(field)+'&l='+new Date().getTime()+Math.random();var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(tf,s);})();</script>
+      <noscript>
+         <img src="http://api.trustedform.com/ns.gif" data-pagespeed-url-hash="3701633110"/>
+      </noscript>
+      </center>
+      </div> 
+      </div>
+ </body>
+
+
